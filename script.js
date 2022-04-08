@@ -16,6 +16,29 @@ function characterLookUp(start, end){
     return characterArray;
 }
 
+/*This function will take in user input and create a new array.
+  We want this to return the string of what the user wants. */
+function generatePassword(){
+    // Step 1: We get the length from user input
+    const USER_INPUT_LENGTH = Number(prompt("Please enter a number between 8 - 128"));
+    // Checks if USER_INPUT_LENGTH is between 8 - 128
+    if (USER_INPUT_LENGTH >=8 && USER_INPUT_LENGTH <= 128){
+        let passwordString = "";
+
+        // Return an array of user password requirements
+        let arrayPool = createCharacterPool();
+
+        // randomIndexGenerator(arrayPool.length)) Returns a random number
+
+        // Every time this loop is called, it will add a random character into into passwordString until it reaches the character count of USER_INPUT_LENGTH
+        for(let passwordIndex = 0; passwordIndex < USER_INPUT_LENGTH; passwordIndex++){
+            passwordString = passwordString + arrayPool[randomIndexGenerator(arrayPool.length)];
+        }
+        return passwordString;
+    } else{
+        return "Make sure you type the right password length";
+    }
+}
 
 // This function will prompt the user if they want numbers, symbols, lowercase & uppercase letters
 function createCharacterPool(){

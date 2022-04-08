@@ -34,6 +34,7 @@ function generatePassword(){
         for(let passwordIndex = 0; passwordIndex < USER_INPUT_LENGTH; passwordIndex++){
             passwordString = passwordString + arrayPool[randomIndexGenerator(arrayPool.length)];
         }
+        
         return passwordString;
     } else{
         return "Make sure you type the right password length";
